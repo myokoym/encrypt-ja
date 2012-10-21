@@ -22,7 +22,7 @@ describe "encrypt-ja" do
       post '/encrypt', {:text => "五時に屋上",
                         :algorithm => "tanuki"}
       last_response.ok? == true
-      last_response.body.force_encoding("utf-8").should =~ /た五時たに屋た上/
+      last_response.body.force_encoding("utf-8").should =~ /五時たに屋た上/
     end
   end
 
@@ -31,7 +31,7 @@ describe "encrypt-ja" do
       get '/encrypt', {:text => "五時に屋上",
                         :algorithm => "tanuki"}
       last_response.ok? == true
-      last_response.body.force_encoding("utf-8").should =~ /た五時たに屋た上/
+      last_response.body.force_encoding("utf-8").should =~ /五時たに屋た上/
     end
   end
 end

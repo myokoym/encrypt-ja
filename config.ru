@@ -1,3 +1,3 @@
-require File.expand_path(File.dirname(__FILE__)) + '/tanuki-web'
+require File.expand_path(File.dirname(__FILE__)) + '/encrypt-ja'
 
 run Sinatra::Application
