@@ -1,0 +1,35 @@
+-# encoding: utf-8
+!!! XML
+!!!
+%html
+  %head
+    %meta{'http-equiv' => 'content-type', :content => 'text/html; charset=utf-8'}
+    %meta{'http-equiv' => 'content-style-type', :content => 'text/css'}
+    %meta{'http-equiv' => 'content-script-type', :content => 'text/javascript'}
+    %title Tanuki - 暗号ツール
+  %body
+    %h1 Tanuki
+
+    Powered by
+    %a{:href => "http://www.ruby-lang.org/ja/"} Ruby
+    ,
+    %a{:href => "http://www.sinatrarb.com/intro-jp.html"} Sinatra
+    ,
+    %a{:href => "http://haml-lang.com/"} Haml
+
+    %form{:action => url("/encrypt", false, true), :method => "post"}
+      %p
+        アルゴリズム
+        %select{:name => "algorithm"}
+          - %w(tanuki).each do |v|
+            %option{:value => v}= v
+      %p
+        %textarea{:name => "text", :cols => 40, :rows => 5}
+      %p
+        %input{:type => "submit"}
+    %p
+      %textarea{:cols => 40, :rows => 5}= @encrypted_text
+    %p
+      HTTP GET URL
+      %br
+      %input{:type => "text", :size => 50, :value => @http_get_url}
