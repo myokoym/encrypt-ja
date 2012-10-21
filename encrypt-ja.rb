@@ -31,7 +31,7 @@ def encrypt
 end
 
 def tanuki(text)
-  text.gsub(/(.{2})/) {|match| "た#{match}" }.unshift("た")
+  text.gsub(/(.{2})/) {|match| "#{match}た" }
 end
 
 def http_get_url
